@@ -1,0 +1,81 @@
+# =============================================================================
+# HEC Pipeline — git ignore rules
+# =============================================================================
+# Inputs and outputs never belong in version control: they are large, often
+# licensed, and may contain sensitive location data (conflict incidents,
+# community locations).  Only the folder placeholders are tracked.
+# =============================================================================
+
+# --- Data directories --------------------------------------------------------
+inputs/*
+outputs/*
+!inputs/.gitkeep
+!outputs/.gitkeep
+
+# --- Python ------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+*.ipynb
+
+# --- Geospatial / large binaries ---------------------------------------------
+# Raster formats
+*.tif
+*.tiff
+*.img
+*.vrt
+*.asc
+*.nc
+*.hdf
+*.h5
+
+# Vector formats
+*.shp
+*.shx
+*.dbf
+*.prj
+*.cpg
+*.sbn
+*.sbx
+*.qix
+*.qml
+
+# Geo databases and exchange formats
+*.gdb/
+*.gpkg
+*.kml
+*.kmz
+*.geojson
+
+# --- Environment / IDE / OS --------------------------------------------------
+.env
+.env.*
+.venv/
+env/
+venv/
+ENV/
+.idea/
+.vscode/
+.spyderproject
+.spyproject
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+
+# --- Logs and temporary files ------------------------------------------------
+*.log
+logs/
+*.tmp
+*.bak
+*.swp
+*~

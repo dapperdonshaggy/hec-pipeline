@@ -1,0 +1,62 @@
+# config.yaml
+crs: "EPSG:32630"
+pixel_size: 30.0
+search_radius: 5000.0
+hex_spacing: 2000.0
+
+
+input_dir:  "inputs"
+output_dir: "outputs"
+
+
+study_area:
+  path: "inputs/EWC_CREMA.shp"
+  required: true
+
+layers:
+  sightings:
+    path: "inputs/Spatial_ELP_activities.shp"
+    weight: 0.25
+    required: false
+    type: point
+
+  pathways:
+    path: "inputs/Migratory route.shp"
+    weight: 0.00     # feeds density only, not risk directly
+    required: false
+    type: line
+
+  conflicts:
+    path: "inputs/Conflict_Zones.shp"
+    weight: 0.20
+    required: false
+    type: point
+
+  lulc:
+    path: "inputs/EWC_2025.tif"
+    farm_code: 4
+    settlement_code: 5
+    weight_farms: 0.10
+    weight_settlements: 0.10
+    required: false
+    type: raster
+
+  streams:
+    path: "inputs/Main_hydro.shp"
+    weight: 0.15
+    required: false
+    type: line
+
+  forest:
+    path: "inputs/EWC_Forest.shp"
+    weight_distance: 0.08
+    weight_edge: 0.07
+    required: false
+    type: polygon
+
+  dem:
+    path: "inputs/EWC_DEM_download.tif"
+    weight_elevation: 0.03
+    weight_slope: 0.02
+    required: false
+    type: raster

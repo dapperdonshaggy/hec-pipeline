@@ -1,0 +1,20 @@
+name: hec
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - numpy
+  - pandas
+  - scipy
+  - scikit-learn
+  - geopandas
+  - shapely
+  - rasterio
+  - pyproj
+  - fiona
+  - libpysal
+  - esda
+  - pyyaml
+  - tqdm
+  - matplotlib
+  - jupyterlab
